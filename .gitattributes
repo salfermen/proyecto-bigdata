@@ -1,0 +1,8 @@
+# Los datos se guardan byte por byte, sin convertir saltos de línea:
+# así las huellas SHA-256 de data/bronce/_manifiesto_bronce.json siguen siendo válidas al clonar.
+data/** -text
+
+*.parquet binary
+*.tgz binary
+*.docx binary
+*.png binary

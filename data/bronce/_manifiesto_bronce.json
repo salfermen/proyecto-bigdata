@@ -1,0 +1,169 @@
+{
+  "capa": "bronce",
+  "fuente": "IBM/AMLSim (https://github.com/IBM/AMLSim), carpeta sample/",
+  "fecha_ingesta_utc": "2026-11-07T13:40:44+00:00",
+  "escenarios": {
+    "20K_fanin200cycle200": {
+      "descripcion": "200 patrones fan-in (pitufeo) + 200 ciclos (triangulación)",
+      "url": "https://raw.githubusercontent.com/IBM/AMLSim/master/sample/20K_fanin200cycle200.tgz",
+      "archivo_fuente": {
+        "nombre": "20K_fanin200cycle200.tgz",
+        "bytes": 1299948,
+        "sha256": "f187bc5784223cdee137ac603164f7183fd58f114090f39e2a12543b6bf48319"
+      },
+      "metadata_simulador": [
+        "nodes: 20,000 (1803 fraud nodes)",
+        "transactions: 120,558",
+        "patterns: 200 cycles and 200 fan-in"
+      ],
+      "archivos": {
+        "alert.png": {
+          "bytes": 16111,
+          "sha256": "b22ce8a1e4003e3e130a77848e6c4c42c198e875a22835e50841e780b9e17439"
+        },
+        "cc.png": {
+          "bytes": 25723,
+          "sha256": "841b04d6eedc926c201f9288114689f7fc3867309eb38dbc7e7407007610e962"
+        },
+        "count.png": {
+          "bytes": 39899,
+          "sha256": "788a1af1f44bf7a6b0e3e3b32dc05ffbceb2bbe4d9cf2abfe9162ac804216ebc"
+        },
+        "deg.png": {
+          "bytes": 24450,
+          "sha256": "4615d1439d1aeac67c6ba4e07bce5d1bacf1b43fa54466b8ac05e9a7f2dc6225"
+        },
+        "diameter.png": {
+          "bytes": 34564,
+          "sha256": "45902ef93856819376c379d7070a06807cb601e81ef7d27dbf63fae5d729a740"
+        },
+        "metadata.txt": {
+          "bytes": 91,
+          "sha256": "be8fcd91ac7ca6c1827600c646f849440a3412f286e5d66357ea0f2432fb5754"
+        },
+        "nodes.csv": {
+          "bytes": 369385,
+          "sha256": "c43ac5dccc8bd18f2a67f13d7aaa2291664291410b911c00f8577a071d2a2113",
+          "filas": 20000
+        },
+        "transactions.csv": {
+          "bytes": 2660496,
+          "sha256": "5f650f8b4ce7cc328f1334c65e719496920c422191adbf9fe67f8ae7cfa99fd5",
+          "filas": 120558
+        },
+        "wcc.png": {
+          "bytes": 11667,
+          "sha256": "8720e175ea377c67aa560cf66de4daad15c9e71b6e8fc7e341ebf570619f13d4"
+        }
+      }
+    },
+    "20K_fanin200": {
+      "descripcion": "200 patrones fan-in (pitufeo)",
+      "url": "https://raw.githubusercontent.com/IBM/AMLSim/master/sample/20K_fanin200.tgz",
+      "archivo_fuente": {
+        "nombre": "20K_fanin200.tgz",
+        "bytes": 1285084,
+        "sha256": "e2479ab7a1ecfcd369a7738c855364825561bf9d888d2ad53174e0ed10fd1f1b"
+      },
+      "metadata_simulador": [
+        "nodes: 20,000 (954 fraud nodes)",
+        "transactions: 118,250",
+        "patterns: 200 fan-in"
+      ],
+      "archivos": {
+        "alert.png": {
+          "bytes": 15411,
+          "sha256": "22b51bc9e49cb5420610e68911829f111199d9774d84d98f1af03e56917022e9"
+        },
+        "cc.png": {
+          "bytes": 28598,
+          "sha256": "5348b2ef05c002e9a4567bc332ce813e7163fe46f174f69b1fbe1fd3cccd9197"
+        },
+        "count.png": {
+          "bytes": 40150,
+          "sha256": "d0228df15d2cb1b313e403f0c2d65574a6ed3453046e3e0951b351724740abfd"
+        },
+        "deg.png": {
+          "bytes": 24572,
+          "sha256": "5c9bda0a669165c0b71c8b2733acd74cfda8683bfd97095f494eff7e2a607826"
+        },
+        "diameter.png": {
+          "bytes": 31880,
+          "sha256": "26cf94b5180414beacf6c8802643744852348a6da4e54ad202447d99c60edb59"
+        },
+        "metadata.txt": {
+          "bytes": 75,
+          "sha256": "425887c60108d2a3fc7ce248dbba31098797e1891ad37ffe96368e0411d08a14"
+        },
+        "nodes.csv": {
+          "bytes": 369158,
+          "sha256": "78ea3a55b75c4daaf4f43c59a0da624c8b6d04869235510fda046a386d84f065",
+          "filas": 20000
+        },
+        "transactions.csv": {
+          "bytes": 2610465,
+          "sha256": "e56ed0df72cdf4f4b872cb0493800f72fd98e802627515a2484098eee998f36a",
+          "filas": 118250
+        },
+        "wcc.png": {
+          "bytes": 11667,
+          "sha256": "8720e175ea377c67aa560cf66de4daad15c9e71b6e8fc7e341ebf570619f13d4"
+        }
+      }
+    },
+    "20K_cycle200": {
+      "descripcion": "200 patrones de ciclo (triangulación)",
+      "url": "https://raw.githubusercontent.com/IBM/AMLSim/master/sample/20K_cycle200.tgz",
+      "archivo_fuente": {
+        "nombre": "20K_cycle200.tgz",
+        "bytes": 1280049,
+        "sha256": "da85ffd26f2c0a082f69b038a9bb5ebd2b6e9c0df15707381aeddcfcb572ae20"
+      },
+      "metadata_simulador": [
+        "nodes: 20,000 (945 fraud nodes)",
+        "transactions: 117,805",
+        "patterns: 200 cycles"
+      ],
+      "archivos": {
+        "alert.png": {
+          "bytes": 16111,
+          "sha256": "b22ce8a1e4003e3e130a77848e6c4c42c198e875a22835e50841e780b9e17439"
+        },
+        "cc.png": {
+          "bytes": 29700,
+          "sha256": "2c79e0b3ee4bffb831860486c6dee16bb87487053dbcb021524503c0b1a345cd"
+        },
+        "count.png": {
+          "bytes": 39117,
+          "sha256": "2b6e48d976695f8093d4f81e5d15f80d38c7b57368ae81745cdac6aed364963a"
+        },
+        "deg.png": {
+          "bytes": 24259,
+          "sha256": "2f28103960f8a8b1d3466d9541fbbe119b2af4a3727fce84c7469d3271d012ea"
+        },
+        "diameter.png": {
+          "bytes": 33124,
+          "sha256": "9c966be51c7c72988d4828debee12ab166cd7fa3a02e4fb0c47ef1dda4037f31"
+        },
+        "metadata.txt": {
+          "bytes": 75,
+          "sha256": "5e1d40a8a4bedf571e9a2f64f4b7824380ef11a5624375c5f661aa52d098f26b"
+        },
+        "nodes.csv": {
+          "bytes": 369171,
+          "sha256": "3a3d40e9055b45c80bc148c4306ed51d3a5b9ce43fcd143c1a0f5d9e34289cbe",
+          "filas": 20000
+        },
+        "transactions.csv": {
+          "bytes": 2602054,
+          "sha256": "fda09438a776a21d1c40dd2ed7f58892e0065a4540af2874ca479ee27794514f",
+          "filas": 117805
+        },
+        "wcc.png": {
+          "bytes": 11667,
+          "sha256": "8720e175ea377c67aa560cf66de4daad15c9e71b6e8fc7e341ebf570619f13d4"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,374 @@
+{
+  "capa": "plata",
+  "fecha_proceso_utc": "2026-11-07T13:40:54+00:00",
+  "supuestos": {
+    "fecha_base": "2017-01-01",
+    "unidad_paso": "1 día (convención AMLSim conf.json)",
+    "centinela_sin_paso": -1
+  },
+  "tablas": {
+    "cuentas": {
+      "filas": 60000,
+      "columnas": {
+        "escenario": "category",
+        "cuenta_id": "int32",
+        "es_fraude": "int8",
+        "saldo_inicial": "float64",
+        "paso_fraude": "Int16",
+        "fecha_fraude": "object",
+        "paso_fraude_registrado": "bool",
+        "tiene_transacciones": "bool",
+        "fila_bronce": "int64",
+        "archivo_origen": "str",
+        "fecha_proceso": "datetime64[us, UTC]"
+      }
+    },
+    "transacciones": {
+      "filas": 353212,
+      "columnas": {
+        "tx_id": "int64",
+        "escenario": "category",
+        "cuenta_origen": "int32",
+        "cuenta_destino": "int32",
+        "monto": "float64",
+        "paso": "int16",
+        "fecha": "object",
+        "n_registros_origen": "int16",
+        "fila_bronce": "int64",
+        "archivo_origen": "str",
+        "fecha_proceso": "datetime64[us, UTC]"
+      }
+    },
+    "cuarentena_cuentas": {
+      "filas": 0,
+      "columnas": {
+        "escenario": "str",
+        "nodeid": "str",
+        "isFraud": "str",
+        "init_balance": "str",
+        "fraudStep": "str",
+        "fila_bronce": "int64",
+        "regla": "str",
+        "motivo": "object"
+      }
+    },
+    "cuarentena_transacciones": {
+      "filas": 43,
+      "columnas": {
+        "escenario": "str",
+        "sourceNodeId": "str",
+        "targetNodeId": "str",
+        "value": "str",
+        "time": "str",
+        "fila_bronce": "int64",
+        "regla": "str",
+        "motivo": "object"
+      }
+    }
+  },
+  "metricas_por_regla": {
+    "20K_fanin200cycle200": {
+      "cuentas": {
+        "filas_bronce": 20000,
+        "C1_tipado_nulos": 0,
+        "C2_dominio": 0,
+        "C3_llave_duplicada": 0,
+        "C4_centinela_a_nulo": 19102,
+        "C5_paso_en_no_fraude_corregido": 0,
+        "filas_plata": 20000,
+        "filas_cuarentena": 0
+      },
+      "transacciones": {
+        "filas_bronce": 120558,
+        "T1_tipado_nulos": 0,
+        "T2_dominio": 0,
+        "T3_integridad_referencial": 0,
+        "T4_autotransferencia": 15,
+        "T5_duplicados_colapsados": 1684,
+        "T5_grupos_con_duplicado": 551,
+        "filas_plata": 118859,
+        "filas_cuarentena": 15,
+        "registros_representados": 120543
+      }
+    },
+    "20K_fanin200": {
+      "cuentas": {
+        "filas_bronce": 20000,
+        "C1_tipado_nulos": 0,
+        "C2_dominio": 0,
+        "C3_llave_duplicada": 0,
+        "C4_centinela_a_nulo": 19524,
+        "C5_paso_en_no_fraude_corregido": 0,
+        "filas_plata": 20000,
+        "filas_cuarentena": 0
+      },
+      "transacciones": {
+        "filas_bronce": 118250,
+        "T1_tipado_nulos": 0,
+        "T2_dominio": 0,
+        "T3_integridad_referencial": 0,
+        "T4_autotransferencia": 14,
+        "T5_duplicados_colapsados": 254,
+        "T5_grupos_con_duplicado": 110,
+        "filas_plata": 117982,
+        "filas_cuarentena": 14,
+        "registros_representados": 118236
+      }
+    },
+    "20K_cycle200": {
+      "cuentas": {
+        "filas_bronce": 20000,
+        "C1_tipado_nulos": 0,
+        "C2_dominio": 0,
+        "C3_llave_duplicada": 0,
+        "C4_centinela_a_nulo": 19537,
+        "C5_paso_en_no_fraude_corregido": 0,
+        "filas_plata": 20000,
+        "filas_cuarentena": 0
+      },
+      "transacciones": {
+        "filas_bronce": 117805,
+        "T1_tipado_nulos": 0,
+        "T2_dominio": 0,
+        "T3_integridad_referencial": 0,
+        "T4_autotransferencia": 14,
+        "T5_duplicados_colapsados": 1420,
+        "T5_grupos_con_duplicado": 437,
+        "filas_plata": 116371,
+        "filas_cuarentena": 14,
+        "registros_representados": 117791
+      }
+    }
+  },
+  "observaciones": {
+    "20K_fanin200cycle200": {
+      "metadata_fraude_declarado": 1803,
+      "fraude_observado": 1804,
+      "metadata_tx_declaradas": 120558,
+      "tx_bronce_observadas": 120558,
+      "pct_cuentas_fraude": 9.02,
+      "cuentas_fraude_sin_paso_registrado": 906,
+      "cuentas_fraude_sin_tx_con_otra_fraude": 5,
+      "cuentas_sin_transacciones": 20,
+      "tx_entre_cuentas_fraude": 6192,
+      "pct_tx_entre_cuentas_fraude": 5.21,
+      "grupos_duplicados_entre_cuentas_fraude": 551,
+      "grupos_duplicados_total": 551,
+      "autotransferencias_de_cuentas_fraude": 9,
+      "tx_monto_menor_100": 2011,
+      "pct_tx_monto_menor_100_entre_fraude": 100.0,
+      "monto_minimo_tx_no_fraude": 100.04,
+      "monto_min": 2.51,
+      "monto_max": 599.91,
+      "paso_min": 1,
+      "paso_max": 149,
+      "fecha_min": "2017-01-02",
+      "fecha_max": "2017-05-30"
+    },
+    "20K_fanin200": {
+      "metadata_fraude_declarado": 954,
+      "fraude_observado": 954,
+      "metadata_tx_declaradas": 118250,
+      "tx_bronce_observadas": 118250,
+      "pct_cuentas_fraude": 4.77,
+      "cuentas_fraude_sin_paso_registrado": 478,
+      "cuentas_fraude_sin_tx_con_otra_fraude": 18,
+      "cuentas_sin_transacciones": 20,
+      "tx_entre_cuentas_fraude": 3178,
+      "pct_tx_entre_cuentas_fraude": 2.69,
+      "grupos_duplicados_entre_cuentas_fraude": 110,
+      "grupos_duplicados_total": 110,
+      "autotransferencias_de_cuentas_fraude": 3,
+      "tx_monto_menor_100": 1600,
+      "pct_tx_monto_menor_100_entre_fraude": 100.0,
+      "monto_minimo_tx_no_fraude": 100.04,
+      "monto_min": 2.52,
+      "monto_max": 599.91,
+      "paso_min": 1,
+      "paso_max": 149,
+      "fecha_min": "2017-01-02",
+      "fecha_max": "2017-05-30"
+    },
+    "20K_cycle200": {
+      "metadata_fraude_declarado": 945,
+      "fraude_observado": 945,
+      "metadata_tx_declaradas": 117805,
+      "tx_bronce_observadas": 117805,
+      "pct_cuentas_fraude": 4.72,
+      "cuentas_fraude_sin_paso_registrado": 482,
+      "cuentas_fraude_sin_tx_con_otra_fraude": 3,
+      "cuentas_sin_transacciones": 20,
+      "tx_entre_cuentas_fraude": 2261,
+      "pct_tx_entre_cuentas_fraude": 1.94,
+      "grupos_duplicados_entre_cuentas_fraude": 437,
+      "grupos_duplicados_total": 437,
+      "autotransferencias_de_cuentas_fraude": 5,
+      "tx_monto_menor_100": 479,
+      "pct_tx_monto_menor_100_entre_fraude": 100.0,
+      "monto_minimo_tx_no_fraude": 100.04,
+      "monto_min": 10.11,
+      "monto_max": 599.91,
+      "paso_min": 1,
+      "paso_max": 149,
+      "fecha_min": "2017-01-02",
+      "fecha_max": "2017-05-30"
+    }
+  },
+  "validaciones": [
+    {
+      "id": "V01",
+      "tabla": "cuentas",
+      "descripcion": "Llave (escenario, cuenta_id) única",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "V02",
+      "tabla": "cuentas",
+      "descripcion": "Sin nulos en columnas obligatorias",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "V03",
+      "tabla": "cuentas",
+      "descripcion": "es_fraude ∈ {0, 1}",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "V04",
+      "tabla": "cuentas",
+      "descripcion": "saldo_inicial ≥ 0",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "V05",
+      "tabla": "cuentas",
+      "descripcion": "Cuenta no fraudulenta sin paso de fraude",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "V06",
+      "tabla": "cuentas",
+      "descripcion": "Sin valores centinela (-1) en paso_fraude",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "V07",
+      "tabla": "transacciones",
+      "descripcion": "Llave tx_id única",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "V08",
+      "tabla": "transacciones",
+      "descripcion": "Sin nulos en columnas obligatorias",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "V09",
+      "tabla": "transacciones",
+      "descripcion": "monto > 0",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "V10",
+      "tabla": "transacciones",
+      "descripcion": "monto con máximo 2 decimales",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "V11",
+      "tabla": "transacciones",
+      "descripcion": "paso ≥ 1",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "V12",
+      "tabla": "transacciones",
+      "descripcion": "cuenta_origen ≠ cuenta_destino",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "V13",
+      "tabla": "transacciones",
+      "descripcion": "cuenta_origen existe en cuentas (FK)",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "V14",
+      "tabla": "transacciones",
+      "descripcion": "cuenta_destino existe en cuentas (FK)",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "V15",
+      "tabla": "transacciones",
+      "descripcion": "Sin duplicados exactos (escenario, origen, destino, paso, monto)",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "V16",
+      "tabla": "transacciones",
+      "descripcion": "fecha = FECHA_BASE + paso días",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "R-20K_fanin200cycle200-C",
+      "tabla": "conciliación",
+      "descripcion": "20K_fanin200cycle200: cuentas Bronce = Plata + cuarentena",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "R-20K_fanin200cycle200-T",
+      "tabla": "conciliación",
+      "descripcion": "20K_fanin200cycle200: transacciones Bronce = Σ n_registros_origen + cuarentena",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "R-20K_fanin200-C",
+      "tabla": "conciliación",
+      "descripcion": "20K_fanin200: cuentas Bronce = Plata + cuarentena",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "R-20K_fanin200-T",
+      "tabla": "conciliación",
+      "descripcion": "20K_fanin200: transacciones Bronce = Σ n_registros_origen + cuarentena",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "R-20K_cycle200-C",
+      "tabla": "conciliación",
+      "descripcion": "20K_cycle200: cuentas Bronce = Plata + cuarentena",
+      "violaciones": 0,
+      "ok": true
+    },
+    {
+      "id": "R-20K_cycle200-T",
+      "tabla": "conciliación",
+      "descripcion": "20K_cycle200: transacciones Bronce = Σ n_registros_origen + cuarentena",
+      "violaciones": 0,
+      "ok": true
+    }
+  ],
+  "resultado": "OK"
+}
